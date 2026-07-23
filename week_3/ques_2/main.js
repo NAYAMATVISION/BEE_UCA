@@ -7,20 +7,27 @@ worker.postMessage("Start");
 // Step 3: Receive data from the worker
 worker.onmessage = function(event) {
 
+    const usersDiv = document.getElementById("users");
+
     const users = event.data;
 
     // Step 4: Check if worker sent an error
     if (users.error) {
-        console.error(users.error);
+        //console.error(users.error);
+
+        usersDiv.innerHTML = "Users not found";
+
         return;
     }
+    usersDiv.innerHtml = ""
 
-    console.log("Users List");
+    //console.log("Users List");
 
     // Step 5: Print every user
     users.forEach(user => {
 
-        console.log(`${user.firstName} ${user.lastName} - Active`);
+        //console.log(`${user.firstName} ${user.lastName} - Active`);
+        usersDiv.innerHTML += `<p>${user.firstName} ${user.lastName} - Active</p>`
 
     });
 
