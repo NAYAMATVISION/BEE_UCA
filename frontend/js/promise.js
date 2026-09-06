@@ -12,7 +12,7 @@
 // then is used to handle the resolved promise and catch is used to handle the rejected promise.
 // finally is used to execute the code after the promise is resolved or rejected.
 
-const callbackfnc = {} => {
+const callbackfnc = () => {
     console.log("inside callback function");
 }
 
@@ -30,3 +30,4 @@ const promise = new Promise(callbackfnc);
 //  if the callback function is executed successfully it returns a promise object with the state of fulfilled 
 // and if the callback function is not executed successfully it returns a promise object with the state of rejected.
 
+// method chaining 
